@@ -1,0 +1,9 @@
+micronaut:
+  server:
+    port: 8082
+    context-path: /
+
+application:
+  message:
+    text:
+      value: Ciao Mondo!

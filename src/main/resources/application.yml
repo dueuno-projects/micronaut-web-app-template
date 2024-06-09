@@ -1,0 +1,6 @@
+# Only works when inline
+micronaut.application.name: micronautapp
+
+application:
+  message:
+    text: Ciao Mondo!

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <conversionRule conversionWord="highlightLogLevel" converterClass="commons.logs.HighlightLogLevel" />
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlightLogLevel(%-5level) [%thread] %-40.40logger{36} : %highlightLogLevel(%msg%n)</pattern>
+        </encoder>
+    </appender>
+
+    <property resource="application.yml" />
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${micronaut.application.name}/logs/${micronaut.application.name}.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${micronaut.application.name}/logs/archive/${micronaut.application.name}.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+            <maxHistory>10</maxHistory>
+            <maxFileSize>10MB</maxFileSize>
+            <totalSizeCap>100GB</totalSizeCap>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %-40.40logger{36} : %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="ERROR">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </root>
+
+    <logger name="io.micronaut" level="INFO" />
+    <logger name="micronautapp" level="DEBUG" />
+
+<!-- HTTP REST-->
+<!--    <logger name="sun.net.www.protocol.http.HttpURLConnection" level="ALL" />-->
+
+</configuration>

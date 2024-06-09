@@ -1,0 +1,4 @@
+micronaut:
+  server: # <1>
+    port: 8082 # <2>
+    context-path: / # <3>
