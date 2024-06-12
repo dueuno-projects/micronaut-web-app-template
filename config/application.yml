@@ -5,5 +5,4 @@ micronaut:
 
 application:
   message:
-    text:
-      value: Ciao Mondo!
+    text: Ciao Mondo!

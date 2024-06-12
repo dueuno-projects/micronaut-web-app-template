@@ -7,7 +7,11 @@ This is a web application template. Use it to start creating your new project.
 
 1. Download the [Micronaut Web App Template](https://github.com/dueuno-projects/micronaut-web-app-template) project
 2. Start the application with `gradlew run`
-3. Visit http://localhost:8082/api/v1/message/42
+3. The API documentation is available at:
+    - http://localhost:8082/swagger-ui
+3. Test the demo service:
+    - http://localhost:8082/api/v1/message/42
+
 
 ## Create a new app
 

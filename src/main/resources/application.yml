@@ -1,6 +1,17 @@
 # Only works when inline
 micronaut.application.name: micronautapp
 
-application:
-  message:
-    text: Ciao Mondo!
+api:
+  version: 1.0
+  title: micronautapp
+  description: micronautapp API
+
+micronaut:
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+      swagger-ui:
+        paths: classpath:META-INF/swagger/views/swagger-ui
+        mapping: /swagger-ui/**
