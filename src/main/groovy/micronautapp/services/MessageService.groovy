@@ -1,5 +1,6 @@
 package micronautapp.services
 
+import groovy.json.JsonOutput
 import micronautapp.config.ConfigApplication
 import groovy.transform.CompileStatic
 import groovy.util.logging.Slf4j
@@ -14,8 +15,15 @@ class MessageService {
     @Inject
     ConfigApplication configApplication
 
-    String getMessage() {
-        return configApplication.message.text
+    String getMessage(String answer) {
+        Map response = [
+                result: [
+                        question: configApplication.message.text,
+                        answer: answer,
+                ],
+        ]
+
+        return JsonOutput.toJson(response)
     }
 
 }

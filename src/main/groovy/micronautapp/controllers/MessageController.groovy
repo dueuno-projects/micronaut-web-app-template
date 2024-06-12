@@ -13,8 +13,8 @@ class MessageController {
     @Inject
     MessageService messageService
 
-    @Get("/message/{id}")
-    String message(String id) {
-        return messageService.message + " We've got '${id}'"
+    @Get("/message/{answer}")
+    String message(String answer) {
+        return messageService.getMessage(answer)
     }
 }

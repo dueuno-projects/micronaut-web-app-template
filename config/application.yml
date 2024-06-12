@@ -5,4 +5,4 @@ micronaut:
 
 application:
   message:
-    text: Ciao Mondo!
+    text: Answer to the Ultimate Question of Life, the Universe, and Everything
