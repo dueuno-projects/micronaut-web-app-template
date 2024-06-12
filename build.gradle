@@ -1,31 +1,31 @@
 plugins {
-    id("groovy") 
-    id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("io.micronaut.application") version "4.4.0"
-    id("io.micronaut.aot") version "4.4.0"
-    id "org.asciidoctor.jvm.convert" version "3.3.2"
-    id "org.asciidoctor.jvm.pdf" version "3.3.2"
+    id 'groovy'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'io.micronaut.application' version '4.4.0'
+    id 'io.micronaut.aot' version '4.4.0'
+    id 'org.asciidoctor.jvm.convert' version '3.3.2'
+    id 'org.asciidoctor.jvm.pdf' version '3.3.2'
 }
 
-version = "1.0-SNAPSHOT"
-group = "micronautapp"
+version = '1.0-SNAPSHOT'
+group = 'micronautapp'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation("io.micronaut:micronaut-http-client")
-    implementation("io.micronaut.groovy:micronaut-runtime-groovy")
-    implementation("io.micronaut.serde:micronaut-serde-jackson")
-    implementation("ch.qos.logback:logback-classic")
-    compileOnly("io.micronaut:micronaut-http-validation")
-    compileOnly("io.micronaut.serde:micronaut-serde-processor")
-    runtimeOnly("org.yaml:snakeyaml")
+    implementation 'io.micronaut:micronaut-http-client'
+    implementation 'io.micronaut.groovy:micronaut-runtime-groovy'
+    implementation 'io.micronaut.serde:micronaut-serde-jackson'
+    implementation 'ch.qos.logback:logback-classic'
+    compileOnly 'io.micronaut:micronaut-http-validation'
+    compileOnly 'io.micronaut.serde:micronaut-serde-processor'
+    runtimeOnly 'org.yaml:snakeyaml'
 }
 
 application {
-    mainClass = "micronautapp.Application"
+    mainClass = 'micronautapp.Application'
 }
 
 java {
@@ -36,11 +36,11 @@ java {
 
 graalvmNative.toolchainDetection = false
 micronaut {
-    runtime("netty")
-    testRuntime("junit5")
+    runtime('netty')
+    testRuntime('junit5')
     processing {
         incremental(true)
-        annotations("micronautapp.*")
+        annotations('micronautapp.*')
     }
     aot {
     // Please review carefully the optimizations enabled below
@@ -79,7 +79,7 @@ asciidoctor {
 
 run {
     jvmArgs = [
-            "-XX:MaxHeapSize=1g",
-            "-XX:InitialHeapSize=1g"
+            '-XX:MaxHeapSize=1g',
+            '-XX:InitialHeapSize=1g'
     ]
 }
