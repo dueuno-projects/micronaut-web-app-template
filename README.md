@@ -1,3 +1,5 @@
+[![Dueuno on X](https://img.shields.io/twitter/follow/dueunoframework?style=social)](https://x.com/dueunoframework)
+
 # Micronaut Web App Template
 
 This is a web application template. Use it to start creating your new project.
